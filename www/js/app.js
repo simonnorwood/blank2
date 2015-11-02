@@ -15,27 +15,63 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 })
 
 // states for each page
-.config(function($stateProvider, $urlRouterProvider){
-$urlRouterProvider.otherwise('/app');
+.config(['$stateProvider','$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+$urlRouterProvider.otherwise('/regions');
 
 $stateProvider
 
 // main page that first loads, select region page
-.state('app', {
-    url: '/app',
+.state('regions', {
+    url: '/regions',
         templateUrl: 'templates/regions.html',
         controller: 'regionCTRL'
   })
 // EU page
-.state('app.EU', {
-    url: '/EU',
+.state('EU', {
+    url: 'region/:id',
         templateUrl: 'templates/EU.html',
+        controller: 'APICtrl'   
+  })
+// EAGM page
+.state('EAGM', {
+    url: '/EAGM',
+        templateUrl: 'templates/EAGM.html',
         controller: 'APICtrl'  
   })
+// ASPAC page
+.state('ASPAC', {
+    url: '/ASPAC',
+        templateUrl: 'templates/ASPAC.html',
+        controller: 'APICtrl'  
+  })
+// CHINA page
+.state('CHINA', {
+    url: '/CHINA',
+        templateUrl: 'templates/CHINA.html',
+        controller: 'APICtrl'
+  })
+// INDIA page
+.state('INDIA', {
+    url: '/INDIA',
+        templateUrl: 'templates/INDIA.html',
+        controller: 'APICtrl'  
+  })
+// LATAM page
+.state('LATAM', {
+    url: '/LATAM',
+        templateUrl: 'templates/LATAM.html',
+       controller: 'APICtrl'
+
+  })
 // USCAN page
-.state('app.USCAN', {
+.state('USCAN', {
     url: '/USCAN',
         templateUrl: 'templates/USCAN.html',
         controller: 'APICtrl'
+  })
+.state('ALL', {
+    url: '/ALL',
+        templateUrl: 'templates/all.html',
+        controller: 'APICtrl'
   });
-});
+}])

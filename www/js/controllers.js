@@ -7,11 +7,13 @@ angular.module('starter.controllers', [])
 
 // api call to offices.json
 .controller('APICtrl', function($scope, $http) {
+	$scope.query = {}
+	$scope.queryBy = '$'
  $http.get('../offices.json').then(function(resp) {
     console.log('Success', resp);
-    $scope.officename = resp.data.LocationName;
+    $scope.offices = resp.data.office;
   }, function(err) {
     console.error('ERR', err);
     // err.status will contain the status code
   });
-});
+})
