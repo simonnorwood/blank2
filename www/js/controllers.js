@@ -5,11 +5,17 @@ angular.module('starter.controllers', [])
 	console.log("regions");
 })
 
-// api call to offices.json
+// api call to offices.json 
 .controller('APICtrl', function($scope, $http) {
+	var url = "";
+	if (ionic.Platform.isAndroid()){
+		url = "/android_asset/www"
+	}
+	// search function starts here
 	$scope.query = {}
 	$scope.queryBy = '$'
- $http.get('../offices.json').then(function(resp) {
+	// search function ends here
+ $http.get('js/offices.json').then(function(resp) {
     console.log('Success', resp);
     $scope.offices = resp.data.office;
   }, function(err) {

@@ -1,11 +1,15 @@
 <!-- user can select which region they want to see -->
-<ion-view view-title="Regions">
+<ion-view class="view" view-title="Regions">
 	<ion-content>
+<label class="item item-input">
+				<i class="icon ion-search placeholder-icon"></i>
+				<input type="search" id="search-criteria" placeholder="Search" ng-model="query[queryBy]">
+			</label>
 		<ion-list id="item">
-		<ion-item ui-sref="ALL">
+			<ion-item ui-sref="ALL">
 				<p>ALL</p>
 			</ion-item>
-			<ion-item ui-sref="region/:id">
+			<ion-item ui-sref="EU">
 				<p>EU</p>
 			</ion-item>
 			<ion-item ui-sref="ASPAC">

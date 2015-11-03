@@ -24,7 +24,7 @@ $stateProvider
 .state('regions', {
     url: '/regions',
         templateUrl: 'templates/regions.html',
-        controller: 'regionCTRL'
+        controller: 'APICtrl'
   })
 // EU page
 .state('EU', {
@@ -69,6 +69,7 @@ $stateProvider
         templateUrl: 'templates/USCAN.html',
         controller: 'APICtrl'
   })
+// ALL page
 .state('ALL', {
     url: '/ALL',
         templateUrl: 'templates/all.html',
